@@ -1,0 +1,23 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Reproducible dependencies and caches
+node_modules/
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.DS_Store
+dist/
+build/
+
+# Historical datasets, model weights, runtime state and scratch files.
+# These are preserved on disk, but are not published to GitHub.
+/projects/*/data/
+/projects/crypto-transformer/tmp.json
+/archive/

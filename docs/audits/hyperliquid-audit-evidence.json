@@ -1,0 +1,127 @@
+{
+  "root": "/home/cyan/default/crypto",
+  "source_sha256": {
+    "scripts/llm_scalper.py": "9fc6794f6308bcbbc1605b5eba7d38c3bbcb607aa8f86f6521f671dec5d455ea",
+    "scripts/improve_v12_low_turnover.py": "0ce273671787b8fc3329d09f2279817598c6299802c0c15e4e7a8aa76bc6f256",
+    "scripts/train_v13.py": "51cf318ac216f9a2f765641b96a21a2ec2bd723cfccba0d09e3a0fc5e4c31266"
+  },
+  "reproductions": [
+    {
+      "issue": "favorable_slippage",
+      "reproduced": true,
+      "entry": 99.0,
+      "equity_change_at_unchanged_market": 0.20202020202020066,
+      "expected": "negative with positive slippage"
+    },
+    {
+      "issue": "entry_fee_missing_from_trade_net",
+      "reproduced": true,
+      "reported_net": -0.01,
+      "equity_change": -0.020000000000003126
+    },
+    {
+      "issue": "non_marketable_ioc_fills_in_sim",
+      "reproduced": true,
+      "current_price": 100,
+      "buy_limit": 90,
+      "simulated_fill": 90.0
+    },
+    {
+      "issue": "adding_overwrites_simulated_position",
+      "reproduced": true,
+      "actual_size": 0.05,
+      "expected_size": 0.15
+    },
+    {
+      "issue": "no_aggregate_margin_or_equity_check",
+      "reproduced": true,
+      "recorded_margin": 30.0,
+      "balance": 20.0
+    },
+    {
+      "issue": "failed_close_leaves_unprotected_position",
+      "reproduced": true,
+      "protection_canceled": true,
+      "exchange_remaining_size": 0.1
+    },
+    {
+      "issue": "partial_close_discards_remaining_position",
+      "reproduced": true,
+      "exchange_remaining_size": 0.06,
+      "local_position": null
+    },
+    {
+      "issue": "deselected_assets_forward_filled_at_rebalance",
+      "reproduced": true,
+      "btc_weight_before": 0.2,
+      "btc_weight_after_confidence_fails": 0.1
+    }
+  ],
+  "historical_scope": {
+    "pairs": [
+      "AAVE/USDT",
+      "ADA/USDT",
+      "ATOM/USDT",
+      "AVAX/USDT",
+      "BNB/USDT",
+      "BTC/USDT",
+      "DOT/USDT",
+      "ETH/USDT",
+      "LINK/USDT",
+      "LTC/USDT",
+      "NEAR/USDT",
+      "OP/USDT",
+      "SOL/USDT",
+      "UNI/USDT",
+      "XRP/USDT"
+    ],
+    "start": "2025-01-01 00:00:00",
+    "end": "2026-06-07 12:00:00",
+    "weights_at_fixed_20_usdc_equity": {
+      "pos_V12_LowTurnover": {
+        "max_target_notional": 1.3687560734677617,
+        "fraction_target_positions_below_10": 1.0
+      },
+      "pos_V12_LowTurnover_Exploratory": {
+        "max_target_notional": 2.053134110201643,
+        "fraction_target_positions_below_10": 1.0
+      },
+      "pos_V14_V13_SelectedOn2024": {
+        "max_target_notional": 0.8,
+        "fraction_target_positions_below_10": 1.0
+      }
+    }
+  },
+  "v14_return_clipping_diagnostic": {
+    "True": {
+      "total_return_pct": 11.63,
+      "sharpe": 1.87,
+      "max_drawdown_pct": -2.19
+    },
+    "False": {
+      "total_return_pct": -7.2,
+      "sharpe": -1.08,
+      "max_drawdown_pct": -8.14
+    }
+  },
+  "paper_scalper_state.json": {
+    "balance": 97.3295,
+    "daily_pnl": -2.2505,
+    "total_trades": 8,
+    "uptime_hours": 5.75,
+    "has_saved_position": false,
+    "reported_net_sum": -2.2506,
+    "fees_sum": 0.8389
+  },
+  "llm_scalper_state.json": {
+    "balance": 105.2715,
+    "daily_pnl": -0.2259,
+    "total_trades": 1,
+    "decisions": 3,
+    "saved_at": "2026-06-24 03:28:33 UTC",
+    "uptime_hours": 0.02,
+    "has_saved_position": false,
+    "reported_net_sum": -0.2259,
+    "fees_sum": 0.0278
+  }
+}

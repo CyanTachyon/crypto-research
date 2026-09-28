@@ -1,0 +1,54 @@
+{
+  "eligible": [],
+  "frozen_utc": "2026-09-25T14:16:45.322679+00:00",
+  "holdout_evaluated": false,
+  "rejection_reasons": {
+    "breakout_168": [
+      "base:nonpositive_return",
+      "base:fewer_than_10_trades",
+      "moderate:nonpositive_return",
+      "moderate:fewer_than_10_trades"
+    ],
+    "breakout_336": [
+      "base:nonpositive_return",
+      "base:fewer_than_10_trades",
+      "moderate:nonpositive_return",
+      "moderate:fewer_than_10_trades"
+    ],
+    "breakout_72": [
+      "base:nonpositive_return",
+      "base:fewer_than_10_trades",
+      "moderate:nonpositive_return",
+      "moderate:fewer_than_10_trades"
+    ],
+    "ema_24_120": [
+      "base:nonpositive_return",
+      "base:drawdown_at_least_8pct",
+      "base:risk_halt",
+      "moderate:nonpositive_return",
+      "moderate:drawdown_at_least_8pct",
+      "moderate:risk_halt"
+    ],
+    "momentum_168": [
+      "base:nonpositive_return",
+      "moderate:nonpositive_return"
+    ],
+    "momentum_336": [
+      "base:nonpositive_return",
+      "moderate:nonpositive_return"
+    ],
+    "momentum_72": [
+      "base:nonpositive_return",
+      "base:drawdown_at_least_8pct",
+      "base:risk_halt",
+      "moderate:nonpositive_return",
+      "moderate:drawdown_at_least_8pct",
+      "moderate:risk_halt"
+    ],
+    "range_48": [
+      "base:nonpositive_return",
+      "moderate:nonpositive_return"
+    ]
+  },
+  "selected": null
+}

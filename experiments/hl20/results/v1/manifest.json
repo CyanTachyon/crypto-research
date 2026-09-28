@@ -1,0 +1,142 @@
+{
+  "candidates": [
+    "breakout_72",
+    "breakout_168",
+    "breakout_336",
+    "momentum_72",
+    "momentum_168",
+    "momentum_336",
+    "ema_24_120",
+    "range_48"
+  ],
+  "created_utc": "2026-09-25T14:16:43.640342+00:00",
+  "data_sha256": "c069f775454d6810bfd53fd30bf10a2d8ce8c20d35ec86f121e34364962c9852",
+  "decision_delay_hours": {
+    "base": 1,
+    "delay_1h": 2,
+    "funding_adverse": 1,
+    "moderate": 1,
+    "severe": 1
+  },
+  "live_trading": false,
+  "notes": [
+    "Funding actual hourly rate uses trade-open proxy for missing historical oracle.",
+    "Funding belongs to previously held position before boundary entries; intra-hour timestamp offsets unresolved.",
+    "Hourly stops/market fills approximate executable prices; no L2 liquidity/partial-fill claim.",
+    "Retention provides about 208 days, not a complete multi-year market-cycle test.",
+    "Historical holdout is relative to this experiment only, never claimed as prospective.",
+    "No selection qualifier means no holdout strategy or benchmark returns are evaluated."
+  ],
+  "scenarios": {
+    "base": {
+      "capital": 20.0,
+      "cooldown_hours": 4,
+      "daily_loss_fraction": 0.03,
+      "fee_bps": 4.5,
+      "funding_cost_multiplier": 1.0,
+      "funding_credit_fraction": 1.0,
+      "max_drawdown": 0.1,
+      "max_hold_hours": 168,
+      "max_notional": 15.0,
+      "max_notional_ratio": 0.75,
+      "min_order": 10.0,
+      "risk_fraction": 0.01,
+      "slippage_bps": 2.0,
+      "stop_atr": 3.0
+    },
+    "delay_1h": {
+      "capital": 20.0,
+      "cooldown_hours": 4,
+      "daily_loss_fraction": 0.03,
+      "fee_bps": 6,
+      "funding_cost_multiplier": 1.0,
+      "funding_credit_fraction": 1.0,
+      "max_drawdown": 0.1,
+      "max_hold_hours": 168,
+      "max_notional": 15.0,
+      "max_notional_ratio": 0.75,
+      "min_order": 10.0,
+      "risk_fraction": 0.01,
+      "slippage_bps": 5,
+      "stop_atr": 3.0
+    },
+    "funding_adverse": {
+      "capital": 20.0,
+      "cooldown_hours": 4,
+      "daily_loss_fraction": 0.03,
+      "fee_bps": 6,
+      "funding_cost_multiplier": 2,
+      "funding_credit_fraction": 0,
+      "max_drawdown": 0.1,
+      "max_hold_hours": 168,
+      "max_notional": 15.0,
+      "max_notional_ratio": 0.75,
+      "min_order": 10.0,
+      "risk_fraction": 0.01,
+      "slippage_bps": 5,
+      "stop_atr": 3.0
+    },
+    "moderate": {
+      "capital": 20.0,
+      "cooldown_hours": 4,
+      "daily_loss_fraction": 0.03,
+      "fee_bps": 6,
+      "funding_cost_multiplier": 1.0,
+      "funding_credit_fraction": 1.0,
+      "max_drawdown": 0.1,
+      "max_hold_hours": 168,
+      "max_notional": 15.0,
+      "max_notional_ratio": 0.75,
+      "min_order": 10.0,
+      "risk_fraction": 0.01,
+      "slippage_bps": 5,
+      "stop_atr": 3.0
+    },
+    "severe": {
+      "capital": 20.0,
+      "cooldown_hours": 4,
+      "daily_loss_fraction": 0.03,
+      "fee_bps": 9,
+      "funding_cost_multiplier": 1.0,
+      "funding_credit_fraction": 1.0,
+      "max_drawdown": 0.1,
+      "max_hold_hours": 168,
+      "max_notional": 15.0,
+      "max_notional_ratio": 0.75,
+      "min_order": 10.0,
+      "risk_fraction": 0.01,
+      "slippage_bps": 10,
+      "stop_atr": 3.0
+    }
+  },
+  "sources_sha256": {
+    "PROTOCOL.md": "e6915e6c3bdf88bdb18feba8e62d7cba9d864747840a99d67d851d55635f8eb1",
+    "data_source.py": "8006219f01681b26adc235bfd562c8a4d5efc6e1ca860d19b5bbb88128dc92de",
+    "engine.py": "6d7f8e8460df393579102d82884bcf2f5da572438a9c7750f9a3745098a27642",
+    "run_experiment.py": "bf5d4bd8e564bd5f6649b49b248efc9563c0c973814c17455116449c1c4e6686",
+    "strategies.py": "593cdf7ba6f35cfc8fbcf9c84fa0a6dfb1d818a9b0e412b7f450bf9afd108468",
+    "test_data_source.py": "9a3bf54a586930e3405b65ba3efd525b2d8b79f81d3977ff288c080ea8a6ac5e",
+    "test_engine.py": "b88a9b0760aec90c8e757caf7d0a3205c0d0782586e734d6101c5b9d78205485",
+    "test_strategies.py": "9d47f3f8ab207344b4020f926f7d9d6108eb640f7296d0ff636f2f65dc0db3b0"
+  },
+  "windows": {
+    "development": {
+      "end_exclusive_utc": "2026-06-19T00:00:00+00:00",
+      "end_index": 2664,
+      "start_index": 336,
+      "start_utc": "2026-03-14T00:00:00+00:00"
+    },
+    "holdout": {
+      "end_exclusive_utc": "2026-09-24T07:00:00+00:00",
+      "end_index": 4999,
+      "start_index": 3832,
+      "start_utc": "2026-08-06T16:00:00+00:00"
+    },
+    "selection": {
+      "end_exclusive_utc": "2026-08-06T16:00:00+00:00",
+      "end_index": 3832,
+      "start_index": 2664,
+      "start_utc": "2026-06-19T00:00:00+00:00"
+    }
+  }
+}

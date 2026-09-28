@@ -1,0 +1,17 @@
+{
+  "strategy_runs": 32,
+  "closed_trades": 513,
+  "equity_points": 55936,
+  "max_absolute_reconciliation_error": 3.2152058793144533e-13,
+  "min_entry_notional": 10.001599919999999,
+  "max_entry_notional": 14.954309105,
+  "failures": [],
+  "hashes_unchanged": true,
+  "holdout_untouched": true,
+  "entry_attempts_checked": 3093,
+  "below_min_rejections_independently_checked": 2580,
+  "accepted_entries_checked": 513,
+  "replay_reports_identical": 32,
+  "min_rejected_after_rounding_notional": 2.9666959100000003,
+  "max_rejected_after_rounding_notional": 9.998999399999999
+}

@@ -1,0 +1,33 @@
+{
+  "date": "2026-09-28",
+  "local_source_files_checked": 88,
+  "local_source_mismatches": 0,
+  "remote_source_files_checked": 292,
+  "remote_initial_mismatches": ["data/raw/binance_ETH_USDT_1h.parquet"],
+  "remote_mismatch_resolution": "Re-copied the changed file and verified matching SHA-256 on both machines.",
+  "recopied_file_sha256": "f4833c7f37744cc6977a189793b23e3e493b4742982e6771cf8e30675a8989aa",
+  "hyperliquid_frozen_result_checksums_valid": true,
+  "hyperliquid_normalized_dataset_matches_server": true,
+  "tests": {
+    "migrated_hyperliquid_unittest": {"passed": 54},
+    "migrated_base_grid_vitest": {"passed": 174},
+    "migrated_base_grid_tsc_no_emit": {"exit_code": 0},
+    "original_remote_python_pytest": {"passed": 15, "warnings": 5}
+  },
+  "dependency_install": {
+    "base_grid_command": "npm ci --ignore-scripts",
+    "reported_vulnerabilities": {"moderate": 3, "high": 5, "critical": 1},
+    "resolution": "Preserved existing lockfile; dependency remediation is outside this archival migration."
+  },
+  "secret_scan": {
+    "remote_source_matches_against_env_secret_values": 0,
+    "generic_candidate_scan_findings": "One documented placeholder (your_wallet_private_key_here); no actual credential found.",
+    "env_files_imported": false
+  },
+  "limitations": [
+    "The remote copy is a file-level snapshot, not an atomic filesystem snapshot of running data collectors.",
+    "Remote Python tests used the existing server virtual environment; its 12 GiB dependencies were not migrated.",
+    "Secret-pattern scanning is not a guarantee that arbitrary sensitive prose is absent.",
+    "No live trading or strategy reliability approval is implied by successful migration tests."
+  ]
+}

@@ -1,0 +1,15 @@
+torch==2.9.1
+numpy>=2.0
+pandas>=3.0
+scikit-learn>=1.8
+xgboost>=3.0
+ccxt>=4.0
+pandas-ta>=0.4
+pyyaml>=6.0
+python-dotenv>=1.0
+requests>=2.31
+matplotlib>=3.10
+seaborn>=0.13
+tensorboard>=2.20
+tqdm>=4.67
+pytest>=9.0

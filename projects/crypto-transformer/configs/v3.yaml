@@ -1,0 +1,64 @@
+data:
+  pairs:
+    - "BTC/USDT"
+    - "ETH/USDT"
+    - "SOL/USDT"
+    - "BNB/USDT"
+    - "XRP/USDT"
+    - "ADA/USDT"
+    - "AVAX/USDT"
+    - "LINK/USDT"
+    - "DOT/USDT"
+    - "UNI/USDT"
+    - "OP/USDT"
+    - "AAVE/USDT"
+    - "LTC/USDT"
+    - "ATOM/USDT"
+    - "NEAR/USDT"
+  timeframe: "1d"
+  prediction_horizon: 5
+  train_cutoff: "2025-06-01"
+  val_fraction: 0.15
+
+features:
+  indicators:
+    rsi_period: 14
+    macd_fast: 12
+    macd_slow: 26
+    macd_signal: 9
+    atr_period: 14
+    bb_period: 20
+    bb_std: 2.0
+    volume_ma_period: 20
+  atr_normalize: true
+
+dataset:
+  seq_len: 60
+  num_features: 22
+  num_pairs: 15
+
+model:
+  d_model: 64
+  nhead: 4
+  num_layers: 2
+  dim_feedforward: 256
+  dropout: 0.4
+  pair_embedding_dim: 16
+  label_smoothing: 0.1
+
+training:
+  batch_size: 128
+  learning_rate: 3.0e-4
+  weight_decay: 0.05
+  max_epochs: 80
+  patience: 15
+  gradient_clip: 1.0
+  warmup_epochs: 5
+  num_workers: 0
+
+backtesting:
+  initial_capital: 10000
+  fee_rate: 0.001
+  slippage: 0.0005
+  position_fraction: 0.2
+  confidence_threshold: 0.002

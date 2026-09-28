@@ -1,0 +1,7 @@
+d_model: 128
+nhead: 4
+num_layers: 3
+dim_feedforward: 512
+dropout: 0.3
+pair_embedding_dim: 16
+max_len: 256

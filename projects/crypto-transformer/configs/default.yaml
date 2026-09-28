@@ -1,0 +1,50 @@
+data:
+  binance_pairs:
+    - "ETH/USDT"
+    - "BTC/USDT"
+  timeframe: "1h"
+  train_cutoff: "2025-12-01"  # Data before this = train/val, after = test
+  val_fraction: 0.2  # 20% of training period for validation (temporal)
+
+features:
+  indicators:
+    rsi_period: 14
+    macd_fast: 12
+    macd_slow: 26
+    macd_signal: 9
+    atr_period: 14
+    bb_period: 20
+    bb_std: 2.0
+    volume_ma_period: 20
+  atr_normalize: true
+
+dataset:
+  seq_len: 48  # 48 hours of context
+  label_threshold: 0.005  # 0.5% = "flat" boundary
+  num_features: 17
+
+model:
+  num_features: 17
+  d_model: 128
+  nhead: 4
+  num_layers: 4
+  dim_feedforward: 512
+  dropout: 0.2
+  num_classes: 3  # up, down, flat
+
+training:
+  batch_size: 64
+  learning_rate: 1.0e-4
+  weight_decay: 0.01
+  max_epochs: 100
+  patience: 15
+  gradient_clip: 1.0
+  num_workers: 4
+  cuda_device: 0  # Relative to CUDA_VISIBLE_DEVICES
+
+backtesting:
+  initial_capital: 10000
+  fee_rate: 0.001  # 0.1% per trade (Binance)
+  slippage: 0.0005  # 0.05%
+  position_fraction: 0.25
+  confidence_threshold: 0.6
